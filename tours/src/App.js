@@ -52,6 +52,8 @@ if(isError){
 }
 if(tours.length==0){
     return <>
+
+    <h1 className="title"> There are no tour option available please click the button below to refresh</h1>
    <button className="clear-btn" onClick={()=>{ fetchTours()}}> Refresh</button>
     </>
 }
