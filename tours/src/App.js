@@ -4,63 +4,24 @@ import Error from './components/Error';
 import "./css/index.css"
 
 import Tours from './components/Tours';
+// our API
 const url = 'https://course-api.com/react-tours-project'
 const App = () => {
-    const[isLoading, setIsLoading] = useState(true);
-    const[isError, setIsError] =useState(false);
-    const[tours, setTours]=  useState([])
+const[isLoading, setIsLoading] = useState(true);
+const[isError, setIsError] = useState(false);
+// initial state
+const[tours, setTours] = useState([]); 
 
-    //fetching the data in useEffect
-     const removedList = (id)=>{
-     setTours(tours.filter((val)=>{
-         return val.id != id;
-     }))
- }
-const fetchTours = ()=>{
-   fetch(url)
-        .then((res)=>{
-            if(res.status>200 || res.status<299){
-                return res.json();
-            }
-            else{
-                setIsError(true);
-                setIsLoading(false);
-            }
-        })
-        .then((data)=>{
-            setTours(data);
-            setIsLoading(false);
-
-        })
-        .catch((err)=>{
-            console.log(err)
-            setIsLoading(false);
-            setIsError(true);
-        })
+//When the document is loading
+if(isLoading){
+    return <Loading/>
 }
-    useEffect(()=>{
-     fetchTours();
-    },[])
-//while the status is loading
-    if(isLoading){
-        return <Loading/>
-    }
-
-//while there is any error
+//when there is error
 if(isError){
     return <Error/>
 }
-if(tours.length==0){
-    return <>
 
-    <h1 className="title"> There are no tour option available please click the button below to refresh</h1>
-   <button className="clear-btn" onClick={()=>{ fetchTours()}}> Refresh</button>
-    </>
-}
- return <>
-<Tours tours={tours} removedList={removedList}/>
- 
- </>
+
 
 }
 
