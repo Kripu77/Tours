@@ -141,3 +141,12 @@ border-radius: 0.25rem;
     color: white;
     transition: 0.5s ease-in all;
 }
+
+.toggle-btn{
+    background-color: transparent;
+    outline: none;
+    border: none;
+ color:hsl(205, 78%, 60%);
+    font-size: 1.2rem;
+    
+}
