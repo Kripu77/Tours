@@ -1,5 +1,5 @@
 import React from 'react'
-
+// in case of any error
 const Error = () => {
     return (
         <div>

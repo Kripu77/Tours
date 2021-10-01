@@ -1,11 +1,7 @@
 import React from 'react'
 
-const Tour = ({id, image, info, price, name}) => {
-//  const removedList = (id)=>{
-//      setTours(tours.filter((val)=>{
-//          return val.id != id;
-//      }))
-//  }
+const Tour = ({id, image, info, price, name, removedList}) => {
+
     return <>
     
 <article className="main-card" >
@@ -18,7 +14,7 @@ const Tour = ({id, image, info, price, name}) => {
 
     </div>
     <p>{info}</p>
-    <button className="delete-btn" > Not Interested</button>
+    <button className="delete-btn" onClick={()=>{removedList(id)}}> Not Interested</button>
 
 </footer>
 </article>

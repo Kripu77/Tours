@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-
+// initally when the page is loading
 const Loading = () => {
 
   

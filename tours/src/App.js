@@ -11,9 +11,13 @@ const App = () => {
     const[tours, setTours]=  useState([])
 
     //fetching the data in useEffect
-
-    useEffect(()=>{
-        fetch(url)
+     const removedList = (id)=>{
+     setTours(tours.filter((val)=>{
+         return val.id != id;
+     }))
+ }
+const fetchTours = ()=>{
+   fetch(url)
         .then((res)=>{
             if(res.status>200 || res.status<299){
                 return res.json();
@@ -33,6 +37,9 @@ const App = () => {
             setIsLoading(false);
             setIsError(true);
         })
+}
+    useEffect(()=>{
+     fetchTours();
     },[])
 //while the status is loading
     if(isLoading){
@@ -43,9 +50,14 @@ const App = () => {
 if(isError){
     return <Error/>
 }
+if(tours.length==0){
+    return <>
+   <button className="clear-btn" onClick={()=>{ fetchTours()}}> Refresh</button>
+    </>
+}
  return <>
-<Tours tours={tours}/>
- <button className="clear-btn" onClick={()=>{setTours([])}}> Clear all</button>
+<Tours tours={tours} removedList={removedList}/>
+ 
  </>
 
 }
