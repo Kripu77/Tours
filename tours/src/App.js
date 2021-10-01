@@ -4,6 +4,7 @@ import Error from './components/Error';
 import "./css/index.css"
 
 import Tours from './components/Tours';
+import Tour from './components/Tour';
 // our API
 const url = 'https://course-api.com/react-tours-project'
 const App = () => {
@@ -11,6 +12,33 @@ const[isLoading, setIsLoading] = useState(true);
 const[isError, setIsError] = useState(false);
 // initial state
 const[tours, setTours] = useState([]); 
+const fetchData = ()=>{
+    // fetch the data using fetch request
+    fetch(url) .then(
+        (res)=>{
+            // when response is valid no 404 request
+            if(res.status>200 || res.status <299){
+                return res.json();
+            }
+            // if 404 return this error
+            else{
+                setIsError(true);
+                setIsLoading(false);
+            }
+        }
+
+    )
+    // the setting the data array to the tours using the method
+    .then((data)=>{
+setTours(data);
+setIsLoading(false);
+
+    })
+}
+
+useEffect(()=>{
+    fetchData();
+},[])
 
 //When the document is loading
 if(isLoading){
@@ -21,6 +49,12 @@ if(isError){
     return <Error/>
 }
 
+
+//when none of the cpondition are met and the fetch has been successful
+return <>
+
+<Tours/>
+</>
 
 
 }

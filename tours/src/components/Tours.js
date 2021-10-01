@@ -3,7 +3,7 @@ import Tour from './Tour';
 
 const Tours = ({tours, removedList}) => {
  return <>
-
+<h1> there </h1>
  </>
 }
 
