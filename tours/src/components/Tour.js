@@ -20,7 +20,7 @@ const[readMore, setReadMore] = useState(false);
 </button>
 
     </p>
-         <button className="delete-btn" onClick={()=>removedTour(id)}> Not Intrested</button>
+         <button className="delete-btn" onClick={()=>removedTour(id)}> Not Interested</button>
         </div>
        
     </article>

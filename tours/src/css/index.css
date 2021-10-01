@@ -150,3 +150,19 @@ border-radius: 0.25rem;
     font-size: 1.2rem;
     
 }
+
+@media all and (max-width: 700px){
+   article{
+       width: 80%;
+       height: 90%;
+      
+   } 
+
+   .main-card{
+       height: 50%;
+   }
+  .main-card img{
+
+height: 5 rem;
+   }
+}
