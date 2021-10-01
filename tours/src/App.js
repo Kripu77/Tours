@@ -44,7 +44,7 @@ setIsLoading(false);
 
     })
 }
-
+// setting fetch inside useeeffect
 useEffect(()=>{
     fetchData();
 },[])
