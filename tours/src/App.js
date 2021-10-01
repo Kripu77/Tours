@@ -1,11 +1,14 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
+import Loading from './components/Loading';
+import Error from './components/Error';
 import "./css/index.css"
+
+import Tours from './components/Tours';
+const url = 'https://course-api.com/react-tours-project'
 const App = () => {
-    return (
-        <div>
-            <h1> test</h1>
-        </div>
-    )
+ return <>
+ <h1> I am fine</h1>
+ </>
 }
 
 export default App
