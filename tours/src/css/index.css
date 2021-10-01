@@ -114,6 +114,7 @@ border-radius: 0.25rem;
      padding: 0.25rem 0.5rem;
      border-radius: 3px;
        transition: 0.5s ease-in all;
+          
 }
 
 .delete-btn:hover{
@@ -121,17 +122,19 @@ border-radius: 0.25rem;
     color:white;
     border: 1px solid white;
     transition: 0.5s ease-in all;
+ 
 }
 
 .clear-btn{
     background: transparent;
-    border: 1px solid rgb(46, 77, 0);
+    border: 1px solid rgb(139, 195, 55);
     color: rgb(67, 109, 4);
     outline: none;
     width: 12rem;
     height: 3rem;
     margin: 3rem;
      transition: 0.5s ease-in all;
+     border-radius: 10px;
 }
 .clear-btn:hover{
     background-color: rgb(114, 177, 19);

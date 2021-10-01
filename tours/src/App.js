@@ -11,7 +11,16 @@ const App = () => {
 const[isLoading, setIsLoading] = useState(true);
 const[isError, setIsError] = useState(false);
 // initial state
-const[tours, setTours] = useState([]); 
+const[tours, setTours] = useState([]);
+console.log(tours); 
+
+//for filter function
+ const removedTour = (id)=>{
+setTours(tours.filter((tour)=>{
+return tour.id != id;
+}))
+ }
+
 const fetchData = ()=>{
     // fetch the data using fetch request
     fetch(url) .then(
@@ -52,8 +61,8 @@ if(isError){
 
 //when none of the cpondition are met and the fetch has been successful
 return <>
-
-<Tours/>
+{/* we can pass the tours as our props */}
+<Tours tours={tours} removedTour={removedTour} fetchData={fetchData}/>
 </>
 
 
