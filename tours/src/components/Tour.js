@@ -10,10 +10,16 @@ const[readMore, setReadMore] = useState(false);
                <h1 className="price">${price}</h1>
         </div>
         {/* the info.substring method shows only 200 texts */}
-      <p>
-      {readMore? info : `${info.substring(0,220)}.......`}
-      <button className="toggle-btn" onClick={()=>setReadMore(!readMore)}> {readMore?` Show Less` : `Read More`}</button>
-      </p>
+      
+    <p>
+        {/* using ternary operator to check the state of the readmore section */}
+{readMore? info : `${info.substring(0,200)}....`}
+{/* toggling the read more bnutton inner text as the state of the read more  */}
+<button onClick={()=>setReadMore(!readMore)} className="toggle-btn"> {readMore? ` Show Less` : ` Show More`}
+
+</button>
+
+    </p>
          <button className="delete-btn" onClick={()=>removedTour(id)}> Not Intrested</button>
         </div>
        
