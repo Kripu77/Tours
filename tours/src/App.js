@@ -61,7 +61,7 @@ if(isError){
 
 //when none of the cpondition are met and the fetch has been successful
 return <>
-{/* we can pass the tours as our props */}
+{/* we can pass the tours as our props, removedTour function as props and fetchData as our props */}
 <Tours tours={tours} removedTour={removedTour} fetchData={fetchData}/>
 </>
 
