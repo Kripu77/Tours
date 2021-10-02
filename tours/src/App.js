@@ -4,7 +4,7 @@ import Error from './components/Error';
 import "./css/index.css"
 
 import Tours from './components/Tours';
-import Tour from './components/Tour';
+
 // our API
 const url = 'https://course-api.com/react-tours-project'
 const App = () => {
@@ -67,5 +67,5 @@ return <>
 
 
 }
-
+// to index.js
 export default App
