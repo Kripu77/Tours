@@ -11,6 +11,4 @@ Please install the NPM package once you clone this repo on your machine.
 
 
 
-
-
-                                                           ------Happy Coding------
+                                                      ------Happy Coding------
